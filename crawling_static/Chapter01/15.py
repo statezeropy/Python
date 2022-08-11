@@ -2,7 +2,9 @@ from bs4 import BeautifulSoup as BS
 import requests as req
 
 # html의 iframe은 다른 곳의 html을 가져옴
-
+# <iframe id="frame_ex1" title="환전 고시 환율" src="/marketindex/exchangeList.naver" width="100%" height="1378px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+# src="상대경로"
+# finance.naver.com/상대경로
 url = "https://finance.naver.com/marketindex/exchangeList.naver"
 res = req.get(url)
 soup = BS(res.text, "html.parser")
