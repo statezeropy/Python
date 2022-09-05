@@ -6,7 +6,7 @@
 from selenium import webdriver
 import time
 
-browser = webdriver.Chrome("./chromedriver.exe")
+browser = webdriver.Chrome("C:\python\crawling_dynamic\chromedriver.exe")
 browser.get("http://naver.com")
 time.sleep(3)
 browser.close()
