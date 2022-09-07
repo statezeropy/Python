@@ -21,12 +21,12 @@ short_wait = WebDriverWait(chrome, 3) # 최대로 기다리는 시간이 3초
 # element가 생성되는 것까지만 확인하기 때문에 클릭이 안되서 오류 발생 가능성 있음
 #login_button = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "a#gnb_login_button")))
 # 보이는 것 확인
-login_button = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a#gnb_login_button")))
-print(login_button.text) # 테스트
-login_button.click() # 로그인 버튼 클릭
+#login_button = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a#gnb_login_button")))
+#print(login_button.text) # 테스트
+#login_button.click() # 로그인 버튼 클릭
 
-input_id = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input#id")))
-input_pw = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input#pw")))
+#input_id = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input#id")))
+#input_pw = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input#pw")))
 
 
 # 캡차에 막힘
@@ -35,12 +35,12 @@ input_pw = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input#
 #input_pw.send_keys("\n") # 로그인을 위한 엔터
 
 # pip install pyperclip
-pyperclip.copy("nashirah23")
-input_id.send_keys(Keys.CONTROL, "v")
+#pyperclip.copy("nashirah23")
+#input_id.send_keys(Keys.CONTROL, "v")
 #input_id.send_keys(Keys.COMMAND, "V") # MAC 버전용
-pyperclip.copy("rlawnepd23!")
-input_pw.send_keys(Keys.CONTROL, "v")
-input_pw.send_keys("\n") # 로그인을 위한 엔터
+#pyperclip.copy("rlawnepd23!")
+#input_pw.send_keys(Keys.CONTROL, "v")
+#input_pw.send_keys("\n") # 로그인을 위한 엔터
 
 
 # 로그인 확인. 로그아웃 버튼확인
@@ -64,12 +64,12 @@ for item in items:
     # 부모의 부모 아래 ad 정보가 있음
     # 공통된 부모를 이용
     try:
-        item.find_elements(By.CSS_SELECTOR, "button[class^=ad_ad_stk__")
+        # 오류 찾아야함.
+        item.find_element(By.CSS_SELECTOR, "button[class^=ad_ad_stk__]")
         continue
     except:
         pass
     #print(item.text)
-    # 오류 찾아야함.
     print(item.find_element(By.CSS_SELECTOR, "a[class^=basicList_link__]").text)
 
 time.sleep(3)
