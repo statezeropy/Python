@@ -56,15 +56,27 @@ search.send_keys("\n") # 검색
 # ^ ~로 시작하는 것
 #wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class^=style_inner__")))
 wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class^=basicList_info_area__")))
+
+# 스크롤 내리는 방법
+#chrome.execute_script("window.scrollBy(0, 10000)")
+#chrome.execute_script("window.scrollBy(0, document.body.scrollHeight)") # 문서 최대
+
+# 스크롤 여러번 내리기
+for i in range(3):
+    chrome.execute_script("window.scrollBy(0, " + str((i+1) * 1000) +")")
+    time.sleep(1)
+
+
+
 # 제품 이름 출력
 #titles = chrome.find_elements(By.CSS_SELECTOR, "a[class^=basicList_link__")
 items = chrome.find_elements(By.CSS_SELECTOR, "div[class^=basicList_info_area__")
+
 for item in items:
     # 광고 빼기
     # 부모의 부모 아래 ad 정보가 있음
     # 공통된 부모를 이용
     try:
-        # 오류 찾아야함.
         item.find_element(By.CSS_SELECTOR, "button[class^=ad_ad_stk__]")
         continue
     except:
