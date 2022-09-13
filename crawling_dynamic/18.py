@@ -56,18 +56,20 @@ wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "select[id^=produc
 chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='1']").click()
 time.sleep(0.1)
 
-chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='1'] li:nth-child(3)").click()
-#chrome.find_elements(By.CSS_SELECTOR, "select[option_sort_no='1'] option[link_image]")[3].click()
-#chrome.find_elements(By.CSS_SELECTOR, "select[id^=product_option_id] option[*]")[3].click()
-#options[3].click()
-time.sleep(0.1)
+chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='1'] option:nth-child(3)").click()
+time.sleep(1)
 
+chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='2'] option:nth-child(3)").click()
+time.sleep(1)
 
+chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='3'] option:nth-child(3)").click()
+time.sleep(1)
+
+chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='4'] option:nth-child(3)").click()
+time.sleep(1)
 
 # 구매 버튼
-#wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[id^=NPAY_BUY_LINK_IDNC_ID_]"))).click()
-
-
+wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[id^=NPAY_BUY_LINK_IDNC_ID_]"))).click()
 
 
 time.sleep(30)
