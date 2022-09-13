@@ -38,7 +38,7 @@ short_wait = WebDriverWait(chrome, 3) # 최대로 기다리는 시간이 3초
 #pyperclip.copy("nashirah23")
 #input_id.send_keys(Keys.CONTROL, "v")
 #input_id.send_keys(Keys.COMMAND, "V") # MAC 버전용
-#pyperclip.copy("rlawnepd23!")
+#pyperclip.copy("passwd")
 #input_pw.send_keys(Keys.CONTROL, "v")
 #input_pw.send_keys("\n") # 로그인을 위한 엔터
 

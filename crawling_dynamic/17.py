@@ -26,7 +26,7 @@ input_pw = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input#
 
 pyperclip.copy("nashirah23")
 input_id.send_keys(Keys.CONTROL, "v")
-pyperclip.copy("rlawnepd23!")
+pyperclip.copy("passwd")
 input_pw.send_keys(Keys.CONTROL, "v")
 input_pw.send_keys("\n") # 로그인을 위한 엔터
  """
