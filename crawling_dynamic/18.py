@@ -51,23 +51,25 @@ chrome.switch_to.window(chrome.window_handles[1])
 # 옵션 선택
 # 기다리기
 wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "select[id^=product_option_id]")))
-# 클릭
-options = chrome.find_elements(By.CSS_SELECTOR, "select[id^=product_option_id]")
 
-
-options[0].click()
+# 옵션 선택 방법 - 다수
+chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='1']").click()
 time.sleep(0.1)
 
-# 옵션 선택 방법 -두가지
-chrome.find_element((By.CSS_SELECTOR, "select[id^=product_option_id] li:nth-child(3)")).click()
+chrome.find_element(By.CSS_SELECTOR, "select[option_sort_no='1'] li:nth-child(3)").click()
+#chrome.find_elements(By.CSS_SELECTOR, "select[option_sort_no='1'] option[link_image]")[3].click()
 #chrome.find_elements(By.CSS_SELECTOR, "select[id^=product_option_id] option[*]")[3].click()
-
-options[1].click()
+#options[3].click()
 time.sleep(0.1)
+
+
 
 # 구매 버튼
+#wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[id^=NPAY_BUY_LINK_IDNC_ID_]"))).click()
 
 
-time.sleep(3)
+
+
+time.sleep(30)
 #chrome.close() # 페이지 닫기
 chrome.quit() # 크롬 전체를 끔
