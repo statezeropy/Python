@@ -1,3 +1,5 @@
+# 강의 자료
+# https://www.notion.so/fastapi/dddb1dba1d154834bd7968a8daf89995?v=c35c3464fa3d43b3b65d5cfd75cd84a5&p=0af20ad0503f413b8d27d9a5b865a4d9&pm=s
 # python 3.6 이상 필요
 # 
 # C:\python\fastapi\fastapi\Scripts\activate

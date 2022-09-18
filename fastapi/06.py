@@ -1,5 +1,5 @@
 
-from fastapi import FastAPI
+from fastapi import FastAPI, status #응답코드
 from typing import Optional
 import uvicorn
 
@@ -33,7 +33,12 @@ class GetUser(BaseModel):
     avatar_url: HttpUrl = "https://naver.com"
 
 
-@app.post("/users", response_model=GetUser)
+""" @app.post("/users", response_model=GetUser)
+def create_user(user: CreateUser):
+    return user
+ """
+#@app.post("/users", response_model=User, status_code=201) # status_code 추가
+@app.post("/users", response_model=User, status_code=status.HTTP_201_CREATED) # status id로 추가 가능
 def create_user(user: CreateUser):
     return user
 
