@@ -7,9 +7,6 @@ import uvicorn
 app = FastAPI()
 
 
-
-
-
 @app.get("/cookie")
 def get_cookies(ga: str = Cookie(None)):
     return {"ga": ga}
