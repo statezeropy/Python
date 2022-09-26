@@ -1,9 +1,0 @@
-# install docker
-https://www.docker.com/products/docker-desktop/
-
-# mysql 도커사용
-docker run --name fastapi-mysql -e MYSQL_ROOT_PASSWORD=1234 -d mysql:8.0 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-
-# 도커 접속
-docker exec -it fastapi-mysql mysql -uroot -p
-Enter password: [MYSQL_ROOT_PASSWORD 값]

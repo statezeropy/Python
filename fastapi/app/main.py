@@ -1,3 +1,6 @@
+# uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+import uvicorn
+
 from typing import List
 
 from fastapi import Depends, FastAPI, HTTPException
@@ -39,3 +42,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
 @app.get("/users", response_model=List[schemas.User])
 def read_users(db: Session = Depends(get_db)):
     return db.query(models.User).all()
+
+# app 실행
+if __name__ == "__main__":
+    uvicorn.run("app.main:app", reload=True) # 코드 수정하면 실시간으로 리로드 됨
